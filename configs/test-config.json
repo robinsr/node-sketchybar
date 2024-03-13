@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "name": "test-item-2",
+      "position": "left",
+      "props": {
+        "label": "Test Item Left",
+        "label.drawing": true
+      }
+    }
+  ]
+}
