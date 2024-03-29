@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "dax": "https://deno.land/x/dax@0.39.2/mod.ts",
+    "std/": "https://deno.land/std@0.220.0/"
+  },
+  "tasks": {
+    "start": "deno run --allow-all src/index.ts",
+    "install": "deno run --allow-all src/index.ts --install",
+    "query-all": "deno run --allow-all src/index.ts --query-all",
+    "dry-run": "deno run --allow-all src/index.ts --dry-run=\"events and more\"",
+    "dev": "deno run --watch index.ts"
+  }
+}

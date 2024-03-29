@@ -1,0 +1,70 @@
+vars:
+  FONT: "SF Pro"
+  TEXT_COLOR: "0xff8aadf4"
+
+hooks:
+  pre_start: null
+  pre_install: |-
+    echo "Pre Install Hook"
+    sketchybar --remove test-item
+
+bar:
+  props:
+    position: bottom
+    y_offset: 0
+    height: 32
+    margin: 0
+    blur_radius: 0
+    color: "$(set_alpha $BAR_COLOR 90)"
+    corner_radius: 0
+    border_width: 0
+    shadow: off
+    display: all
+    topmost: on
+  events:
+    mouseEnter: null
+    mouseExit: null
+    click: null
+    scroll: null
+    front_app_switched: |-
+      source $HOME/.config/zsh/lib/notify.sh
+      notifyMe
+
+  defaults:
+    padding_left: 5
+    padding_right: 5
+    icon:
+      font: "$FONT:Bold:14.0"
+      color: "$ICON_COLOR"
+      padding_left: 4
+      padding_right: 4
+    label:
+      font: "$FONT:SemiBold:13.0"
+      color: "$ICON_COLOR"
+      padding_left: 4
+      padding_right: 4
+
+items:
+  - name: test-space
+    type: space
+    position: left
+    props:
+      label:
+        text: "I AM A SPACE"
+    events:
+      mouseEnter: null
+      mouseExit: null
+      click: null
+      scroll: null
+  - name: test-item
+    position: left
+    props:
+      label:
+        text: Test Item Left
+        drawing: true
+        color: "$TEXT_COLOR"
+    events:
+      mouseEnter: null
+      mouseExit: null
+      click: null
+      scroll: null
